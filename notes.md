@@ -34,7 +34,7 @@ Confirm
 - [ ] 4. Design your MVP = 'Minimum Viable Product' vs. what are my 'streatch goals'
       - Streatch goals - bonus feature you want but don't need 
 
-**NOEW WE CODE (BUT JUST OUR MODELS - NO CONTROLLERS OR VIEWS)**
+**NOW WE CODE (BUT JUST OUR MODELS - NO CONTROLLERS OR VIEWS)**
 
 - [x] 5. generate new project using corneal gem
 - [x] 6. Create github repo
@@ -42,6 +42,36 @@ Confirm
       - Migrations
       - Model classes
       - Associations 
-- [ ] 8. Test your models and associations in the console
+- [x] 8. Test your models and associations in the console
       - Create some seed data
+      - Tested our associations in tux
       - Adjust migrations as needed
+
+### PART 2 — User Authentication
+
+**NOW, CONSIDER USER CONTROLLER, APPLICATION CONTROLLER, AND VIEWS**
+
+*IMPORTANT:* Build views and controller actions based on the flow of your app, one step at a time, testing as you go!
+
+Use shotgun and pry (or raise/inspect) all the time!
+
+ 9. Start with your UsersController
+
+Add your get login/signup/logout routes
+Add your post login/sign up routes
+ 10. Enable sessions in ApplicationController
+
+Enable sessions
+Create session secret
+ 
+ 11. Create your views
+
+display login form
+display signup form
+user show page
+ 
+ 12. Create your ApplicationController helper methods
+
+#logged_in?
+#current_user
+ 13. Build out controller routes for other models (add a controller for each model)
