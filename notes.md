@@ -1,0 +1,47 @@
+Specifications for the Sinatra Assessment
+Specs:
+
+- [ ] Use Sinatra to build the app
+- [ ] Use ActiveRecord for storing information in a database
+- [ ] Include more than one model class (e.g. User, Post, Category)
+- [ ] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
+- [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+- [ ] Include user accounts with unique login attribute (username or email)
+- [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+- [ ] Ensure that users can't modify content created by other users
+- [ ] Include user input validations
+- [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+Confirm
+
+- [ ] You have a large number of small Git commits
+- [ ] Your commit messages are meaningful
+- [ ] You made the changes in a commit that relate to the commit message
+- [ ] You don't include changes in a commit that aren't related to the commit message
+
+
+
+**BEFORE YOU CODE**
+
+- [x] 1. Check project requirements in 'spec.md'
+- [x] 2. Ideate! What do you want to build?
+      - choose a domain you're familiar with!
+      - choose a domain you care about
+- [ ] 3. Wireframing & User Stories
+      - Write down your models, their attributes, and their associations
+      - "As a user, I can ......"
+      - What does your app do?
+- [ ] 4. Design your MVP = 'Minimum Viable Product' vs. what are my 'streatch goals'
+      - Streatch goals - bonus feature you want but don't need 
+
+**NOEW WE CODE (BUT JUST OUR MODELS - NO CONTROLLERS OR VIEWS)**
+
+- [x] 5. generate new project using corneal gem
+- [ ] 6. Create github repo
+- [x] 7. Build your models
+      - Migrations
+      - Model classes
+      - Associations 
+- [ ] 8. Test your models and associations in the console
+      - Create some seed data
+      - Adjust migrations as needed
