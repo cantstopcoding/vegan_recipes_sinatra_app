@@ -37,7 +37,7 @@ Confirm
 **NOEW WE CODE (BUT JUST OUR MODELS - NO CONTROLLERS OR VIEWS)**
 
 - [x] 5. generate new project using corneal gem
-- [ ] 6. Create github repo
+- [x] 6. Create github repo
 - [x] 7. Build your models
       - Migrations
       - Model classes
