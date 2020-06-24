@@ -5,6 +5,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 # in order to PATCH and DELETE requests
-`use Rack::MethodOverride`
+use Rack::MethodOverride
 
 run ApplicationController
