@@ -7,4 +7,5 @@ end
 # in order to PATCH and DELETE requests
 use Rack::MethodOverride
 
+use UsersController
 run ApplicationController
