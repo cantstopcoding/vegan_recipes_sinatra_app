@@ -8,8 +8,14 @@ class UsersController < ApplicationController
         # find user
         user = User.find_by(email: params[:email])
         # authenticate the user
-        # log them in
-        # redirect user's profile (user's show)
+        if !!user && user.authenticate(params[:password])
+            # log them in
+            binding.pry
+            # redirect user's profile (user's show)
+        else  
+            # show error message
+            redirect '/login'
+        end 
     end
 
 end
