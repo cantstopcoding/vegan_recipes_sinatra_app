@@ -12,15 +12,16 @@ class UsersController < ApplicationController
             # log them in
             # create a user key/value pair in the session hash for the user if they actually get logged in
             session[:user_id] = user.id
-            binding.pry
             # redirect user's profile (user's show)
-
+            redirect "/users/#{user.id}"
         else  
             # show error message
-            redirect '/login'
+            redirect "/login"
         end 
     end
 
-    
+    get '/users/:id' do 
+        "users shot page!"
+    end
 
 end
