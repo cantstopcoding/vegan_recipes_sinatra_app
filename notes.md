@@ -61,20 +61,20 @@ Use shotgun and pry (or raise/inspect) all the time!
 Add your get login/signup/logout routes
 Add your post login/sign up routes
  
-10. Enable sessions in ApplicationController
+[] 10. Enable sessions in ApplicationController
 
 Enable sessions
 Create session secret
  
-11. Create your views
+[x] 11. Create your views
 
 display login form
 display signup form
 user show page
  
-12. Create your ApplicationController helper methods
+[] 12. Create your ApplicationController helper methods
 
 #logged_in?
 #current_user
  
-13. Build out controller routes for other models (add a controller for each model)
+[] 13. Build out controller routes for other models (add a controller for each model)

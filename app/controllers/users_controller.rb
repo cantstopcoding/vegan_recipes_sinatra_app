@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         # authenticate the user
         if !!user && user.authenticate(params[:password])
             # log them in
+            # create a user key/value pair in the session hash for the user if they actually get logged in
             binding.pry
             # redirect user's profile (user's show)
         else  
