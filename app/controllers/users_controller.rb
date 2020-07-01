@@ -20,8 +20,12 @@ class UsersController < ApplicationController
         end 
     end
 
+    get '/signup' do 
+       erb :'users/signup' 
+    end
+
     get '/users/:id' do 
-        "users shot page!"
+        "users show page!"
     end
 
 end
