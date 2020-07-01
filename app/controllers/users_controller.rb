@@ -24,8 +24,19 @@ class UsersController < ApplicationController
        erb :'users/signup' 
     end
 
+    post '/users' do 
+        @user = User.create(params)
+        session[:user_id] = @user.id
+        redirect "/users/#{@user.id}"
+    end 
+
     get '/users/:id' do 
         "users show page!"
+    end
+
+    get '/logout' do 
+        session.clear
+        redirect '/'
     end
 
 end
