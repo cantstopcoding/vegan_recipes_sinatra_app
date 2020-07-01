@@ -78,6 +78,32 @@ user show page
 -#current_user
  
 **Move on to Sign Up**
--[] 13. Build out controller routes and views for signup.
+-[x] 13. Build out controller routes and views for signup.
       - Build your `get` signup route + "signup" view
       - Build your `post` signup route
+
+PART 3 — CRUD
+-[] 14. Create your PostsController
+
+      -Mount new controller in ApplicationController with use PostsController
+ 
+-[] 15. Implement READ functionality
+
+      -Create get '/posts' route
+      -Create index.erb view
+-[] 16. Implement CREATE functionality
+
+      -Create get '/posts/new' to render form
+      -Create new.erb
+      -Create post "/posts" do to create new post
+-[] 17. Implement UPDATE functionality
+
+      -Confirm use Rack::MethodOverride in config.ru
+      -Create get '/posts/:id/edit' to render form
+      -Create edit.erb
+      -Create patch '/posts/:id' to create new post
+-[] 18. Implement DELETE functionality
+
+      -Confirm use Rack::MethodOverride in config.ru
+      -Create delete form in show.erb view
+      -Create delete '/posts/:id' route
