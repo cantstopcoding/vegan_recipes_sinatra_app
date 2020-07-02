@@ -87,7 +87,7 @@ PART 3 — CRUD
 
       - Mount new controller in ApplicationController with use PostsController
  
--[] 15. Implement READ functionality
+-[x] 15. Implement READ functionality
 
       - Create get '/posts' route
       - Create index.erb view
