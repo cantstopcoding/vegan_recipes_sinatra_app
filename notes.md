@@ -96,14 +96,37 @@ PART 3 — CRUD
       - Create get '/posts/new' to render form
       - Create new.erb
       - Create post "/posts" do to create new post
--[] 17. Implement UPDATE functionality
+-[x] 17. Implement UPDATE functionality
 
       -Confirm use Rack::MethodOverride in config.ru
       -Create get '/posts/:id/edit' to render form
       -Create edit.erb
       -Create patch '/posts/:id' to create new post
--[] 18. Implement DELETE functionality
+-[x] 18. Implement DELETE functionality
 
       -Confirm use Rack::MethodOverride in config.ru
       -Create delete form in show.erb view
       -Create delete '/posts/:id' route
+
+### PART 4 — Tighten Up!: Validations and Authorization
+
+-[] -20. Implement sinatra-flash gem to display validation failures and improve user experience (UX)
+      -Review the docs
+      -Tip: a flash[:message] has the lifecyle of one GET request and will not show up when rendering an erb file.
+      
+-[] -21. Include ActiveRecord validations in your User and Post model that checks for user inputs
+      -Ex: Making sure all form fields are filled out or that a user is using a unique email or username
+      Review the docs
+      -Tip: has_secure_password has a built in validation for the password_digest attribute!
+      
+-[] -22. Leverage the logged_in? helper method in the controller and/or views to implement authorization for creating a new post.
+      -Make sure a user can't create a new post without being logged in.
+      
+-[] -23. Implement authorization to edit and delete.
+      -Make sure a user can't edit or delete a post that doesn't belong to them.
+      
+-[] -24. Refactor your code to make it more DRY!
+      -Ask: Where am I repeating myself?
+      
+-[] -25. Create a README.md
+      -Include a short description, install instructions, a contributors guide and a link to the license for your code
