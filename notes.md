@@ -91,7 +91,7 @@ PART 3 — CRUD
 
       - Create get '/posts' route
       - Create index.erb view
--[] 16. Implement CREATE functionality
+-[x] 16. Implement CREATE functionality
 
       - Create get '/posts/new' to render form
       - Create new.erb
