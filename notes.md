@@ -83,19 +83,19 @@ user show page
       - Build your `post` signup route
 
 PART 3 — CRUD
--[] 14. Create your PostsController
+-[x] 14. Create your PostsController
 
-      -Mount new controller in ApplicationController with use PostsController
+      - Mount new controller in ApplicationController with use PostsController
  
 -[] 15. Implement READ functionality
 
-      -Create get '/posts' route
-      -Create index.erb view
+      - Create get '/posts' route
+      - Create index.erb view
 -[] 16. Implement CREATE functionality
 
-      -Create get '/posts/new' to render form
-      -Create new.erb
-      -Create post "/posts" do to create new post
+      - Create get '/posts/new' to render form
+      - Create new.erb
+      - Create post "/posts" do to create new post
 -[] 17. Implement UPDATE functionality
 
       -Confirm use Rack::MethodOverride in config.ru

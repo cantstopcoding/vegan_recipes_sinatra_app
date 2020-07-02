@@ -1,8 +1,22 @@
 class RecipesController < ApplicationController
-    # Index route for all ingredients
-    # Show route for a single ingredients
-    # Index route for all ingredients
-    # Show route for a single ingredients
+    # Index route for all recipes (which are the ingredients and instructions)
+    # Show route for a single recipes (which are the ingredients and instructions)
+
+    # Read
+    get '/recipes' do 
+        @recipes = Recipe.all 
+        erb :'recipes/index'
+    end
+
+    get '/recipes/:id' do 
+        @recipe = Recipe.find(params[:id])
+        erb :'/recipes/show'
+    end
+    # Create
+
+    # Update
+
+    # Delete
 end
 
 # create_table "recipes", force: :cascade do |t|
