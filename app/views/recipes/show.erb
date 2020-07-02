@@ -7,9 +7,8 @@
 <p><%= @recipe.instructions %></p>
 <p>Chef Name: <%= @recipe.user.name %></p>
 
-<% if authorized_to_edit?(@recipe) %>
-    <a href="/recipes/edit/<%= @recipe.id %>">Update Recipe</a>
-<% end %>
+<a href="/recipes/<%= @recipe.id %>/edit">Update Recipe</a>
+
 
 
 

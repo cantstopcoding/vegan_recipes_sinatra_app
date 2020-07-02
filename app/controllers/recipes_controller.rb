@@ -22,19 +22,16 @@ class RecipesController < ApplicationController
     end
 
     get '/recipes/:id' do 
+        # binding.pry
         @recipe = Recipe.find(params[:id])
         erb :'/recipes/show'
     end
 
     # Update
-    get '/recipes/edit/:id' do 
+    get '/recipes/:id/edit' do 
+        # binding.pry
         @recipe = Recipe.find(params[:id])
-
-        if authorized_to_edit?(@recipe)
-            erb :'recipes/edit'
-        else
-            redirect '/recipes'
-        end
+        erb :'recipes/edit'
     end 
 
     # Delete
