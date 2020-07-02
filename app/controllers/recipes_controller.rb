@@ -15,12 +15,14 @@ class RecipesController < ApplicationController
     end
 
     post '/recipes' do 
+        recipe = Recipe.new(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions], user_id: current_user.id)
         # binding.pry
-        if #=> it's true any of the fields are an empty string
-            recipe = Recipe.create(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions], user_id: current_user.id)
-            
+        if recipe.save #=> .save triggers validation in the Recipe model
+            flash[:message] = "Created Recipe Successfully!"
             redirect "/recipes/#{recipe.id}"
         else 
+            binding.pry 
+            flash[:error] = "Error: Please Fill Out All Fields"
             redirect "/recipes/new"
         end
     end
