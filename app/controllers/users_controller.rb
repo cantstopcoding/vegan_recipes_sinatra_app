@@ -12,10 +12,14 @@ class UsersController < ApplicationController
             # log them in
             # create a user key/value pair in the session hash for the user if they actually get logged in
             session[:user_id] = user.id
+            # add success message to flash hash
+            flash[:message] = "Welcome Back #{user.name}!"
             # redirect user's profile (user's show)
             redirect "/users/#{user.id}"
         else  
             # show error message
+            flash[:error] = "Invalid credentials. Try again!"
+
             redirect "/login"
         end 
     end

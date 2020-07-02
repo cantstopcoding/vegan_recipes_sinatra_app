@@ -16,9 +16,13 @@ class RecipesController < ApplicationController
 
     post '/recipes' do 
         # binding.pry
-        recipe = Recipe.create(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions], user_id: current_user.id)
-
-        redirect "/recipes/#{recipe.id}"
+        if #=> it's true any of the fields are an empty string
+            recipe = Recipe.create(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions], user_id: current_user.id)
+            
+            redirect "/recipes/#{recipe.id}"
+        else 
+            redirect "/recipes/new"
+        end
     end
 
     get '/recipes/:id' do 
