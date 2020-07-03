@@ -11,7 +11,12 @@ class RecipesController < ApplicationController
     # Create
     # render a form to create new post
     get '/recipes/new' do 
-        erb :'recipes/new'
+        if logged_in?
+            erb :'recipes/new'
+        else
+            flash[:error] = "Error: To create recipe, please log in or sign up"
+            redirect "/"
+        end
     end
 
     post '/recipes' do 
