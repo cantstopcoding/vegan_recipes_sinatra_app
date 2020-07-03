@@ -110,11 +110,11 @@ PART 3 — CRUD
 
 ### PART 4 — Tighten Up!: Validations and Authorization
 
--[] -20. Implement sinatra-flash gem to display validation failures and improve user experience (UX)
+-[x] -20. Implement sinatra-flash gem to display validation failures and improve user experience (UX)
       -Review the docs
       -Tip: a flash[:message] has the lifecyle of one GET request and will not show up when rendering an erb file.
       
--[] -21. Include ActiveRecord validations in your User and Post model that checks for user inputs
+-[x] -21. Include ActiveRecord validations in your User and Post model that checks for user inputs
       -Ex: Making sure all form fields are filled out or that a user is using a unique email or username
       Review the docs
       -Tip: has_secure_password has a built in validation for the password_digest attribute!

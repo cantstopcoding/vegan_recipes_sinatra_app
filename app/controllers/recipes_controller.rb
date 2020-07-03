@@ -21,8 +21,8 @@ class RecipesController < ApplicationController
             flash[:message] = "Created Recipe Successfully!"
             redirect "/recipes/#{recipe.id}"
         else 
-            binding.pry 
-            flash[:error] = "Error: Please Fill Out All Fields"
+            # binding.pry 
+            flash[:error] = "Error: #{recipe.errors.full_messages.to_sentence}"
             redirect "/recipes/new"
         end
     end
