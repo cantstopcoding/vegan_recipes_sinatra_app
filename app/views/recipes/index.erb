@@ -1,8 +1,8 @@
-<h1>Recipes:</h1>
+<h1>Latest Recipes:</h1>
 
 <% @recipes.each do |r| %>
     <h3><a href="/recipes/<%= r.id %>"><%= r.title %>:</a></h3>
-    <img src="<%= r.image_url %>" alt="<%= r.title %> Pic" height="175" width="175"><br>
+    <a href="/recipes/<%= r.id %>"><img src="<%= r.image_url %>" alt="<%= r.title %> Pic" height="175" width="175"></a><br>
     <strong>Date Created: <%= r.created_at %></strong>
     <p>By <%= r.user.name %></p>
     <%# add a description %>
