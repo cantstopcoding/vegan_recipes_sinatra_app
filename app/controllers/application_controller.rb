@@ -33,6 +33,6 @@ class ApplicationController < Sinatra::Base
       recipe.user == current_user
     end
   
-  end 
+  end
 
 end

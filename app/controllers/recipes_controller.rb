@@ -40,9 +40,14 @@ class RecipesController < ApplicationController
 
     # Update
     get '/recipes/:id/edit' do 
-        # binding.pry
         @recipe = Recipe.find(params[:id])
-        erb :'recipes/edit'
+
+        if authorized_to_edit?(@recipe)
+            erb :'recipes/edit'
+        else
+            flash[:error] = "You are not authorized to update this recipe!"
+            redirect "/recipes"
+        end
     end 
 
     patch '/recipes/:id' do 
