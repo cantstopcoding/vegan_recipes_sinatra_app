@@ -119,10 +119,10 @@ PART 3 — CRUD
       Review the docs
       -Tip: has_secure_password has a built in validation for the password_digest attribute!
       
--[] -22. Leverage the logged_in? helper method in the controller and/or views to implement authorization for creating a new post.
+-[x] -22. Leverage the logged_in? helper method in the controller and/or views to implement authorization for creating a new post.
       -Make sure a user can't create a new post without being logged in.
       
--[] -23. Implement authorization to edit and delete.
+-[x] -23. Implement authorization to edit and delete.
       -Make sure a user can't edit or delete a post that doesn't belong to them.
       
 -[] -24. Refactor your code to make it more DRY!
