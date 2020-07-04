@@ -7,13 +7,11 @@
 <p><%= @recipe.instructions %></p>
 <p>Chef Name: <%= @recipe.user.name %></p>
 
-<a href="/recipes/<%= @recipe.id %>/edit">Update Recipe</a>
+<% if authorized_to_edit?(@recipe) %>
+    <a href="/recipes/<%= @recipe.id %>/edit">Update Recipe</a>
 
-<form action="/recipes/<%= @recipe.id %>" method="POST">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Recipe">
-</form>
-
-
-
-
+    <form action="/recipes/<%= @recipe.id %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Recipe">
+    </form>
+<% end %>
