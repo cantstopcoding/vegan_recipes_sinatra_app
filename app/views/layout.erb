@@ -29,6 +29,7 @@
       <div class="nav">
         <% if logged_in? %>
           <a href="/recipes">Latest Recipes</a><br>
+          <a href="/users/<%= @user.id %>">My Profile</a><br>
           <a href="/recipes/new">Make a Recipe</a><br>
           <a href="/logout">Logout</a>
         <% end %>
