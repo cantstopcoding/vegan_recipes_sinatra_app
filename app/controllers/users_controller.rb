@@ -53,6 +53,21 @@ class UsersController < ApplicationController
         # end
     end 
 
+    patch '/users/:id' do 
+        @user = User.find(params[:id])
+        @user.update(name: params[:name], email: params[:email], password: params[:password], bio: params[:bio], image_url: params[:image_url])
+        redirect "/users/#{@user.id}"
+    end
+
+    # create_table "users", force: :cascade do |t|
+    #     t.string   "name"
+    #     t.text     "bio"
+    #     t.string   "image_url"
+    #     t.string   "email"
+    #     t.string   "password_digest"
+    #     t.datetime "created_at",      null: false
+    #     t.datetime "updated_at",      null: false
+    #   end
 
     get '/logout' do 
         session.clear
