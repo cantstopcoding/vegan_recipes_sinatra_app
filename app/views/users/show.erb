@@ -3,3 +3,8 @@
 <img src="<%= @user.image_url %>" alt="profile pic" height="200" width="200">
 <p>Email: <%= @user.email %></p>
 <p>About: <%= @user.bio %></p>
+
+<h1>My Recipes: </h1>
+<% @user.recipes.each do |r| %>
+    <%= r.title %><br>
+<% end %>
