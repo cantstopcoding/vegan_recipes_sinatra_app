@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
         else
             flash[:error] = "Error: To create recipe, please log in or sign up"
             redirect "/"
-        end
+        end  
     end
 
     post '/recipes' do 

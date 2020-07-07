@@ -6,5 +6,10 @@
 
 <h1>My Recipes: </h1>
 <% @user.recipes.each do |r| %>
-    <%= r.title %><br>
+    <h3><a href="/recipes/<%= r.id %>"><%= r.title %>:</a></h3>
+    <a href="/recipes/<%= r.id %>"><img src="<%= r.image_url %>" alt="<%= r.title %> Pic" height="175" width="175"></a><br>
+    <strong>Date Created: <%= r.created_at %></strong>
+    <p>By <%= r.user.name %></p>
 <% end %>
+
+

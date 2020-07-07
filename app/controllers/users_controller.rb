@@ -39,6 +39,20 @@ class UsersController < ApplicationController
         erb :'users/show'
     end
 
+    get '/users/:id/edit' do 
+        @user = User.find(params[:id])
+        
+        erb :'users/edit'
+        # @user = User.find(params[:id])
+
+        # if authorized_to_edit?(@user)
+        #     erb :'user/edit'
+        # else
+        #     flash[:error] = "You are not authorized to update this user!"
+        #     redirect "/user"
+        # end
+    end 
+
 
     get '/logout' do 
         session.clear

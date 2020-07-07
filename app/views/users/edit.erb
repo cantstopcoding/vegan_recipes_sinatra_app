@@ -1,0 +1,10 @@
+<h1>Update Your Profile:</h1>
+
+<form action="/users/<%= @user.id %>" method="POST">
+    <input type="hidden" name="_method" value="patch">
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" value="<%= @user.name %>"><br><br>
+    
+    <input type="submit" value="Update Profile">
+</form>
+
