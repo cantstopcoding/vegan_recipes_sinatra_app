@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
-  get "/" do
+  get "/" do   
     if logged_in?
       redirect "/users/#{current_user.id}"
     else
@@ -34,8 +34,11 @@ class ApplicationController < Sinatra::Base
       recipe.user == current_user
     end
 
-    def authorized_to_edit_user?(user)
-      user == current_user
+    def authorized_to_edit_user?
+      session_id = User.find_by_id(session[:user_id])
+      params_id = User.find_by_id(params[:id])
+      
+      session_id == params_id
     end
   
   end
