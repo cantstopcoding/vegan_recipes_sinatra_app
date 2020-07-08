@@ -35,22 +35,27 @@ class UsersController < ApplicationController
     end 
 
     get '/users/:id' do 
-        @user = User.find_by_id(params[:id])
-        erb :'users/show'
+        if logged_in?
+            @user = User.find_by_id(params[:id])
+            erb :'users/show'
+        else
+            flash[:error] = "You are not authorized to use this profile!"
+            redirect '/'
+        end
     end
 
     get '/users/:id/edit' do 
-        @user = User.find(params[:id])
-        
-        erb :'users/edit'
         # @user = User.find(params[:id])
+        
+        # erb :'users/edit'
+        @user = User.find(params[:id])
 
-        # if authorized_to_edit?(@user)
-        #     erb :'user/edit'
-        # else
-        #     flash[:error] = "You are not authorized to update this user!"
-        #     redirect "/user"
-        # end
+        if logged_in?  && authorized_to_edit_user?(@user)
+            erb :'users/edit'
+        else
+            flash[:error] = "You are not authorized to update this user!"
+            redirect "/"
+        end
     end 
 
     patch '/users/:id' do 
@@ -58,16 +63,6 @@ class UsersController < ApplicationController
         @user.update(name: params[:name], email: params[:email], password: params[:password], bio: params[:bio], image_url: params[:image_url])
         redirect "/users/#{@user.id}"
     end
-
-    # create_table "users", force: :cascade do |t|
-    #     t.string   "name"
-    #     t.text     "bio"
-    #     t.string   "image_url"
-    #     t.string   "email"
-    #     t.string   "password_digest"
-    #     t.datetime "created_at",      null: false
-    #     t.datetime "updated_at",      null: false
-    #   end
 
     get '/logout' do 
         session.clear

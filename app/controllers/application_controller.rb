@@ -33,6 +33,10 @@ class ApplicationController < Sinatra::Base
     def authorized_to_edit?(recipe)
       recipe.user == current_user
     end
+
+    def authorized_to_edit_user?(user)
+      user == current_user
+    end
   
   end
 
