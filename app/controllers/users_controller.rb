@@ -45,7 +45,6 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id/edit' do 
-        # binding.pry
         @user = User.find(params[:id])
         
         if authorized_to_edit_user?
