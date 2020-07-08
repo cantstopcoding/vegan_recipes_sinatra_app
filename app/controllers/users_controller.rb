@@ -45,15 +45,13 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id/edit' do 
-        # @user = User.find(params[:id])
-        
-        # erb :'users/edit'
+        # binding.pry
         @user = User.find(params[:id])
-
-        if logged_in?  && authorized_to_edit_user?(@user)
+        
+        if authorized_to_edit_user?
             erb :'users/edit'
         else
-            flash[:error] = "You are not authorized to update this user!"
+            flash[:error] = "You are not authorized to update that user!"
             redirect "/"
         end
     end 
@@ -63,7 +61,7 @@ class UsersController < ApplicationController
         @user.update(name: params[:name], email: params[:email], password: params[:password], bio: params[:bio], image_url: params[:image_url])
         redirect "/users/#{@user.id}"
     end
-
+   
     get '/logout' do 
         session.clear
         redirect '/'
