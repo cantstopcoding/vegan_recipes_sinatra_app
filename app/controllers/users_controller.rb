@@ -25,7 +25,13 @@ class UsersController < ApplicationController
     end
 
     get '/signup' do 
-       erb :'users/signup' 
+        flash[:message] = "Account Created!"
+        erb :'users/signup' 
+    end
+
+    get '/users' do 
+        @users = User.all 
+        erb :'users/index' 
     end
 
     post '/users' do 
@@ -70,6 +76,7 @@ class UsersController < ApplicationController
         session.clear 
         @user = User.find(params[:id])
         @user.destroy 
+        flash[:error] = "Profile Deleted"
         redirect '/'
     end
 end
