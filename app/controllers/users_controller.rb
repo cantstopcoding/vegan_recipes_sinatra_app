@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     delete '/users/:id' do 
         session.clear 
         @user = User.find(params[:id])
-        @user.delete 
-        redirect '/signup'
+        @user.destroy 
+        redirect '/'
     end
 end
