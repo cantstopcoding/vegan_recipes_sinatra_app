@@ -6,3 +6,4 @@ class User < ActiveRecord::Base
     validates :name, :bio, :image_url, :email, presence: true
 end  
 
+ 

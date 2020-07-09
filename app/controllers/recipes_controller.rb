@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
             flash[:error] = "You are not authorized to update this recipe!"
             redirect "/recipes"
         end
-    end 
+    end   
 
     patch '/recipes/:id' do 
         @recipe = Recipe.find(params[:id])
