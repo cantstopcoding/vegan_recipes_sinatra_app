@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     get '/login' do 
         erb :'users/login'
-    end
+    end  
 
     post '/login' do 
         # find user

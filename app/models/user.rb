@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
 
     has_many :recipes, dependent: :destroy
 
-    
-end
+    validates :name, :bio, :image_url, :email, presence: true
+end  
+
