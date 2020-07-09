@@ -1,8 +1,8 @@
-<h1>Hi <%= @user.name %>!</h1>
+<h1>Chef <%= @user.name %></h1>
 
 <img src="<%= @user.image_url %>" alt="profile pic" height="200" width="200">
-<p>Email: <%= @user.email %></p>
 <p>About: <%= @user.bio %></p>
+<p>Email: <%= @user.email %></p>
 
 <% if authorized_to_edit_user? %>
     <form action="/users/<%= @user.id %>/edit">
@@ -18,4 +18,11 @@
     <p>By <%= r.user.name %></p>
 <% end %>  
 
+<% if authorized_to_edit_user? %>
+    <br><br><br>
+    <form action="/users/<%= @user.id %>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete User">
+    </form>
+<% end %>
 
