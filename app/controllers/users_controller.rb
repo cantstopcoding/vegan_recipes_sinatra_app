@@ -59,11 +59,17 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.update(name: params[:name], email: params[:email], password: params[:password], bio: params[:bio], image_url: params[:image_url])
         redirect "/users/#{@user.id}"
-    end
+    end  
    
     get '/logout' do 
         session.clear
         redirect '/'
     end
-
+  
+    delete '/users/:id' do 
+        session.clear 
+        @user = User.find(params[:id])
+        @user.delete 
+        redirect '/signup'
+    end
 end
