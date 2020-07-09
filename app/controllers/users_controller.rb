@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     end
 
     get '/signup' do 
-        flash[:message] = "Account Created!"
         erb :'users/signup' 
     end
 
@@ -34,30 +33,17 @@ class UsersController < ApplicationController
         erb :'users/index' 
     end
 
-    # post '/recipes' do 
-    #     recipe = Recipe.new(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions], user_id: current_user.id)
-    #     # binding.pry
-    #     if recipe.save #=> .save triggers validation in the Recipe model
-    #         flash[:message] = "Created Recipe Successfully!"
-    #         redirect "/recipes/#{recipe.id}"
-    #     else 
-    #         # binding.pry 
-    #         flash[:error] = "Error: #{recipe.errors.full_messages.to_sentence}"
-    #         redirect "/recipes/new"
-    #     end
-    # end
-
-    post '/users' do 
-        # @user = User.create(params)
-        # session[:user_id] = @user.id
-        # redirect "/users/#{@user.id}"
-        binding.pry
+    post '/users' do
+        
         @user = User.new(name: params[:name], bio: params[:bio], image_url: params[:image_url], email: params[:email], password: params[:password])
-
+        
         if @user.save 
             flash[:message] = "User Created Successfully!"
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
+        else
+            flash[:error] = "Error: #{@user.errors.full_messages.to_sentence}"
+            redirect "/signup"
         end
 
     end 
