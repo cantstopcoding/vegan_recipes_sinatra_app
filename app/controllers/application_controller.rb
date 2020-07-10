@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
       recipe.user == current_user
     end
 
-    def    
+    def authorized_to_edit_user? 
       session_id = User.find_by_id(session[:user_id])
       params_id = User.find_by_id(params[:id])
       
