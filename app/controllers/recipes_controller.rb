@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
 
     # Create
     # render a form to create new post
-    get '/recipes/new' do 
+    get '/recipes/new' do   
         if logged_in?
             erb :'recipes/new'
         else
@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
             flash[:error] = "Error: #{recipe.errors.full_messages.to_sentence}"
             redirect "/recipes/new"
         end
-    end
+    end  
 
     get '/recipes/:id' do 
         # binding.pry
