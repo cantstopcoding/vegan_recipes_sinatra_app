@@ -53,7 +53,6 @@ class RecipesController < ApplicationController
     patch '/recipes/:id' do 
         @recipe = Recipe.find(params[:id])
         @recipe.update(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions])
-        flash[:message] = "Updated #{@recipe.title} Successfully!"
         redirect "/recipes/#{@recipe.id}"
     end
 

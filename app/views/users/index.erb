@@ -5,7 +5,7 @@
 <% @users.each do |u| %>
     <h3><a href="/users/<%= u.id %>"><%= u.name %>:</a></h3>
     <a href="/users/<%= u.id %>"><img src="<%= u.image_url %>" alt="<%= u.name %> Pic" height="175" width="175"></a><br>
-    <strong>Joined: <%= u.created_at %></strong>
+    <strong>Joined: <%= u.created_at.strftime("%d/%m/%Y") %></strong>
     <p>By <%= u.name %></p>
     <%# add a description %>
 <% end %> 
