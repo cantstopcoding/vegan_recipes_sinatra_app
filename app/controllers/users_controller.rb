@@ -49,15 +49,13 @@ class UsersController < ApplicationController
     end 
 
     get '/users/:id' do 
-        # if logged_in?
-        #     @user = User.find_by_id(params[:id])
-        #     erb :'users/show'
-        # else
-        #     flash[:error] = "You are not authorized to use this profile!"
-        #     redirect '/'
-        # end
-        @user = User.find_by_id(params[:id])
-        erb :'users/show'
+        if logged_in?
+            @user = User.find_by_id(params[:id])
+            erb :'users/show'
+        else
+            flash[:error] = "Please log in or sign up to view this profile!"
+            redirect '/'
+        end
     end
 
     get '/users/:id/edit' do 
