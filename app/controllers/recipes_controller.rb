@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
         recipe = Recipe.new(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions], user_id: current_user.id)
         # binding.pry
         if recipe.save #=> .save triggers validation in the Recipe model
-            flash[:message] = "Created Recipe Successfully!"
+            flash[:message] = "Created #{recipe.title} Successfully!"
             redirect "/recipes/#{recipe.id}"
         else 
             # binding.pry 
@@ -53,6 +53,7 @@ class RecipesController < ApplicationController
     patch '/recipes/:id' do 
         @recipe = Recipe.find(params[:id])
         @recipe.update(title: params[:title], image_url: params[:image_url], ingredients: params[:ingredients], instructions: params[:instructions])
+        flash[:message] = "Updated #{@recipe.title} Successfully!"
         redirect "/recipes/#{@recipe.id}"
     end
 
@@ -60,6 +61,7 @@ class RecipesController < ApplicationController
     delete '/recipes/:id' do 
         @recipe = Recipe.find(params[:id])
         @recipe.destroy 
+        flash[:message] = "#{@recipe.title} Deleted"
         redirect '/recipes'
     end
 end

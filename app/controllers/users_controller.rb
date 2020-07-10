@@ -36,9 +36,9 @@ class UsersController < ApplicationController
     post '/users' do
         
         @user = User.new(name: params[:name], bio: params[:bio], image_url: params[:image_url], email: params[:email], password: params[:password])
-        
+
         if @user.save 
-            flash[:message] = "User Created Successfully!"
+            flash[:message] = "User Created Successfully. Welcome, #{@user.name}!"
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
