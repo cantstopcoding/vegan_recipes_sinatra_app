@@ -125,7 +125,7 @@ PART 3 — CRUD
 -[x] -23. Implement authorization to edit and delete.
       -Make sure a user can't edit or delete a post that doesn't belong to them.
       
--[] -24. Refactor your code to make it more DRY!
+-[x] -24. Refactor your code to make it more DRY!
       -Ask: Where am I repeating myself?
       
 -[x] -25. Create a README.md
