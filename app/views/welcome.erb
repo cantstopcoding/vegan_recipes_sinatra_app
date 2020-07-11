@@ -8,7 +8,7 @@
     <h3><a href="/recipes/<%= r.id %>"><%= r.title %>:</a></h3>
     <a href="/recipes/<%= r.id %>"><img src="<%= r.image_url %>" alt="<%= r.title %> Pic" height="175" width="175"></a><br>
     <strong>Date Created: <%= r.created_at.strftime("%B %d %Y") %></strong>
-    <p>By <a href="users/<%= r.user.id %>"><%= r.user.name %></a></p>
+    <p>By <%= r.user.name %></p>
 <% end %>  
 </div>  
 
